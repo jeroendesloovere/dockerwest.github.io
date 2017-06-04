@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title><![CDATA[DockerWest]]></title>
-    <link href="http://localhost:8000/blog/tags/static site generator.xml" rel="self"/>
-    <link href="http://localhost:8000/"/>
-    <updated>2017-06-04T18:28:32+02:00</updated>
-    <id>http://localhost:8000/</id>
+    <link href="/blog/tags/static site generator.xml" rel="self"/>
+    <link href="/"/>
+    <updated>2017-06-04T18:30:03+02:00</updated>
+    <id>/</id>
         <generator uri="http://sculpin.io/">Sculpin</generator>
             <entry>
             <title type="html"><![CDATA[Balrog]]></title>
-            <link href="http://localhost:8000/blog/2012/10/16/balrog/"/>
+            <link href="/blog/2012/10/16/balrog/"/>
             <updated>2012-10-16T00:00:00+02:00</updated>
-            <id>http://localhost:8000/blog/2012/10/16/balrog/</id>
+            <id>/blog/2012/10/16/balrog/</id>
             <content type="html"><![CDATA[<p>Found out about <a href="http://github.com/igorw/balrog">Balrog</a> today! It looks
 like a really nice micro static site generator. Maybe Sculpin and Balrog
 can be friends?</p>

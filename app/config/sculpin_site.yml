@@ -4,7 +4,7 @@
 title: DockerWest
 subtitle: Easy docker images
 google_analytics_tracking_id: UA-100428460-1
-url: http://localhost:8000
+#url: http://localhost:8000
 
 # Insert your disqus shortname
 #disqus:

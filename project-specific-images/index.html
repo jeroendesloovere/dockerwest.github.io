@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Tag Archive "community" &mdash; DockerWest &mdash; Easy docker images</title>
+        <title>Project specific images &mdash; DockerWest &mdash; Easy docker images</title>
         <meta charset="utf-8">
         <meta name="theme-color" content="#ffffff">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="alternate" type="application/atom+xml" href="http://localhost:8000/blog/tags/community.xml" title="DockerWest 'community' tag feed" />
-    <meta name="robots" content="noindex, follow">
-        <link href="http://localhost:8000/components/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+                    <meta name="robots" content="noindex, follow">
+                <link href="http://localhost:8000/components/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="http://localhost:8000/css/style.css" rel="stylesheet" type="text/css" />
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
@@ -82,15 +81,89 @@
         </header>
         <div class="mainContent container">
             <div class="row-fluid">
-                    <h2>"community"</h2>
-        <h3>October 2012</h3>
-<article>
-  <div><a href="http://localhost:8000/blog/2012/10/16/balrog/">Balrog</a></div>
-</article>
+                    <h2>Project specific images</h2>
 
-<div>
-</div>
-                </div>
+<p>
+    We currently have some project/framework specific images:
+</p>
+
+<h3>PHP</h3>
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Image</th>
+        <th>Based on</th>
+        <th>Available versions</th>
+        <th>&nbsp;</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><a href="https://github.com/dockerwest/php-pimcore" target="_blank">php-pimcore</a></td>
+        <td>dockerwest/php</td>
+        <td>5.6, 7.0 and 7.1</td>
+        <td>PHP container for Pimcore 4 and 5 applications. <br>All required php extensions are provided.</td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/dockerwest/php-magento2" target="_blank">php-magento2</a></td>
+        <td>dockerwest/php</td>
+        <td>5.6, 7.0 and 7.1</td>
+        <td>PHP container for Magento 2 applications. <br>All required php extensions are provided.</td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/dockerwest/php-laravel" target="_blank">php-laravel</a></td>
+        <td>dockerwest/php</td>
+        <td>5.6, 7.0 and 7.1</td>
+        <td>PHP container for Laravel 4 applications with all basic required extensions.</td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/dockerwest/php-symfony" target="_blank">php-symfony</a></td>
+        <td>dockerwest/php</td>
+        <td>5.6, 7.0 and 7.1</td>
+        <td>PHP container for Symfony 2 and 3 applications with all basic required extensions.</td>
+    </tr>
+    </tbody>
+</table>
+
+<h3>Nginx</h3>
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Image</th>
+        <th>Based on</th>
+        <th>Available versions</th>
+        <th>&nbsp;</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><a href="https://github.com/dockerwest/nginx-pimcore">nginx-pimcore</a></td>
+        <td>nginx:alpine</td>
+        <td>stable and mainline</td>
+        <td>Nginx container with default Pimcore 4 vhost configuration</td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/dockerwest/nginx-magento2">nginx-magento2</a></td>
+        <td>nginx:alpine</td>
+        <td>stable and mainline</td>
+        <td>Nginx container with default Magento 2 vhost configuration</td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/dockerwest/nginx-laravel" target="_blank">nginx-laravel</a></td>
+        <td>nginx:alpine</td>
+        <td>stable and mainline</td>
+        <td>Nginx container with default Laravel 4 vhost configuration</td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/dockerwest/nginx-symfony" target="_blank">nginx-symfony</a></td>
+        <td>nginx:alpine</td>
+        <td>stable and mainline</td>
+        <td>Nginx container with default Symfony 2 and 3 vhost configuration</td>
+    </tr>
+    </tbody>
+</table>                </div>
         </div>
         <footer class="container">
             &copy; 2017 DockerWest &ndash; <a href="/about">About us</a>

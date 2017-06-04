@@ -64,6 +64,21 @@
                             <!--<li><a href="{{ site.url }}/blog">Posts Archive</a></li>
                             <li><a href="{{ site.url }}/blog/categories">Categories</a></li>
                             <li><a href="{{ site.url }}/blog/tags">Tags</a></li>-->
+                            <li><a href="{{ site.url }}/base-images">Base images</a></li>
+                            <li><a href="{{ site.url }}/project-specific-images">Project specific images</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Compose environments <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{ site.url }}/compose-environments">Overview</a></li>
+                                    <li class="dropdown-header">Products</li>
+                                    <li><a href="{{ site.url }}/compose-environments">Pimcore</a></li>
+                                    <li><a href="{{ site.url }}/compose-environments">Magento</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li class="dropdown-header">Frameworks</li>
+                                    <li><a href="{{ site.url }}/compose-environments">Symfony</a></li>
+                                    <li><a href="{{ site.url }}/compose-environments">Laravel</a></li>
+                                </ul>
+                            </li>
                             <li><a href="{{ site.url }}/about">About us</a></li>
                         </ul>
                     </div>
@@ -76,7 +91,9 @@
                 </div>
         </div>
         <footer class="container">
-            &copy; {{ "now"|date("Y") }} {{ site.title }}
+            &copy; {{ "now"|date("Y") }} {{ site.title }} &ndash; <a href="/about">About us</a>
+            &ndash; <a href="https://hub.docker.com/u/dockerwest/" target="_blank">DockerWest on Docker Hub</a>
+            &ndash; <a href="https://github.com/dockerwest" target="_blank">DockerWest on Github</a>
         </footer>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

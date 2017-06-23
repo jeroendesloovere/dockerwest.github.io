@@ -1,0 +1,11 @@
+{
+  success: true,
+  data: [
+    {
+      name: "xhprof",
+      description: "Description of xhprof addon",
+      config: "https://github.com/dockerwest/compose-xhgui/blob/master/docker-compose.yml",
+      postInstallMessage: "You should manually update your .env file: change 'DEVELOPMENT' to '1'."
+    }
+  ]
+}

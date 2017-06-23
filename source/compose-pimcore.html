@@ -141,6 +141,15 @@ nginx:
                     which mounts the <code>APPLICATION</code> path to the image and links to mysql, redis and
                     mailcatcher.
                 </p>
+                <p>You can access the php-cli using the <code>php</code> helper. (see below)</p>
+                <p>
+                    The following packages are installed: php-cli php-fpm php-curl php-json php-zip
+                    php-gd php-mysql php-mcrypt php-sqlite3
+                    php-bz2 php-xml php-mbstring php-zip php-redis php-memcached
+                    php-imagick php-intl imagemagick inkscape pngnq pngcrush xvfb cabextract
+                    poppler-utils xz-utils libreoffice libreoffice-math jpegoptim ffmpeg
+                    html2text ghostscript exiftool xfonts-75dpi wkhtmltopdf
+                </p>
             </div>
         </div>
     </div>
@@ -193,6 +202,10 @@ nginx:
                     This redis container is available at <code>redis.pimcore.dev</code> through
                 <pre>- DOMAIN_NAME=redis.${BASEHOST:-pimcore.dev}</pre>
                 </p>
+                <p>
+                    Connection settings:<br>
+                <pre>host: redis</pre>
+                </p>
             </div>
         </div>
     </div>
@@ -222,6 +235,15 @@ nginx:
                     This mysql container is available at <code>mysql.pimcore.dev</code> through
                 <pre>- DOMAIN_NAME=mysql.${BASEHOST:-pimcore.dev}</pre>
                 </p>
+                <p>You should first create a new database through the <code>create_db</code> helper command (see below).
+                    <br>
+                    Connection settings:
+                <pre>
+host: mysql
+port: 3306
+user: root
+password: toor  (unless changed in .env file)</pre>
+                </p>
             </div>
         </div>
     </div>
@@ -240,11 +262,17 @@ nginx:
         <div id="tech5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="techHeading5">
             <div class="panel-body">
                 <p>
-                    <a href="https://hub.docker.com/r/schickling/mailcatcher/">Mailcatcher</a> image named <code>mailcatcher</code>.
+                    <a href="https://hub.docker.com/r/schickling/mailcatcher/">Mailcatcher</a> container named <code>mailcatcher</code>.
                 </p>
                 <p>
-                    This mailcatcher container is available at <code>mailcatcher.pimcore.dev</code> through
+                    This mailcatcher container is available at <code>mailcatcher.pimcore.dev:1080</code> through
                 <pre>- DOMAIN_NAME=mailcatcher.${BASEHOST:-pimcore.dev}</pre>
+                </p>
+                <p>
+                    SMTP settings for your application are:<br>
+                <pre>
+host: mailcatcher
+port: 1025</pre>
                 </p>
             </div>
         </div>

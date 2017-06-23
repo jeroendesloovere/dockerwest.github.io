@@ -5,7 +5,7 @@
     {
       "name":"xhprof",
       "description":"Add xhprof and xhprofgui to your existing environment for easy profiling.",
-      "config": "https://gist.githubusercontent.com/Pegasuz/bd67f481e7071702e824fc8d70716038/raw/25f418169691ac64f1dd95b2bbf1603e8571c4f5/config.yml",
+      "config": "https://github.com/dockerwest/compose-xhgui/blob/master/docker-compose.yml",
       "postInstallMessage":"You should manually update your .env file: change 'DEVELOPMENT' to '1'."
     }
   ]

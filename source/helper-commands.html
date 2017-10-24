@@ -3,51 +3,233 @@ layout: default
 title: Helper commands
 
 ---
-<h2>Compose environment</h2>
+<h3>Available helper commands</h3>
+<p>Click on one of the commands for more info and an example.</p>
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingOne">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                   aria-expanded="true" aria-controls="collapseOne">
+                    run
+                </a>
+            </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+            <div class="panel-body">
+                Run docker-compose for the current project, setting the project name to the BASEHOST variable from the
+                .env file
+                <br><br>
+                <pre>$ run up</pre>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading10">
+            <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse10"
+                   aria-expanded="false" aria-controls="collapse10">
+                    php
+                </a>
+            </h4>
+        </div>
+        <div id="collapse10" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading10">
+            <div class="panel-body">
+                <p>Execute the <a href="http://php.net/">php</a> command inside the running php container, or inside a
+                    php-symfony container if none is running.</p>
+                <p>
+                    The working directory will be the current directory you are executing this command from.
+                </p>
+                eg.
+                <pre>$ php -v</pre>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingTwo">
+            <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
+                   aria-expanded="false" aria-controls="collapseTwo">
+                    composer
+                </a>
+            </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div class="panel-body">
+                <p>Run the <a href="https://getcomposer.org/">composer</a> command inside the php docker container.
+                    The working directory will be the current directory you are executing this command from.
+                </p>
+                <p>
+                    Your $HOME/.ssh and $HOME/.composer folders wil be mounted inside this container to enable you to
+                    make use of your ssh keys and composer cache.
+                </p>
 
-<p>We provide some helper commands to allow you to execute common commands inside docker containers.<br>
-    If you are running the environment, these commands are in your PATH and can be executed from everywhere.</p>
-<h3><a id="composer_3"></a>composer</h3>
-<p>Run the <a href="https://getcomposer.org/">composer</a> command inside the php docker container.<br>
-    The working directory will be the current directory you are executing this command from.<br>
-    Your $HOME/.ssh and $HOME/.composer folders wil be mounted inside this container to enable you to make use of your
-    ssh keys and composer cache.</p>
-<p>eg. <code>$ composer require package_name</code></p>
-<h3><a id="create_db_10"></a>create_db</h3>
-<p>Create a new database inside the running mysql container with the name ‘pimcore’ and ‘DEFAULT CHARSET utf8’.</p>
-<p>eg. <code>$ create_db</code></p>
-<h3><a id="mysql_15"></a>mysql</h3>
-<p>Execute a mysql command inside the running mysql container as the root user.</p>
-<p>eg. <code>$ mysql "SELECT * FROM table_name;"</code></p>
-<h3><a id="mysqldump_20"></a>mysqldump</h3>
-<p>Execute the mysqldump command inside the running mysql container as the root user.</p>
-<p>eg. <code>$ mysqldump db_name &gt; export_file_name.sql</code></p>
-<h3><a id="mysqlimport_25"></a>mysqlimport</h3>
-<p>Import a given mysql file into a given database, inside the running mysql container as the root user.</p>
-<p>eg. <code>$ mysqlimport db_name import_file_name.sql</code></p>
-<h3><a id="node_30"></a>node</h3>
-<p>Execute the <a href="https://nodejs.org">node</a> command inside a node container.<br>
-    The working directory will be the current directory you are executing this command from.</p>
-<p>eg. <code>$ node js_file.js</code></p>
-<h3><a id="npm_36"></a>npm</h3>
-<p>Execute the <a href="https://www.npmjs.com/">npm</a> command inside a node container.<br>
-    The working directory will be the current directory you are executing this command from.<br>
-    Your $HOME/.ssh and $HOME/.npm folders wil be mounted inside this container to enable you to make use of your ssh
-    keys and npm cache.</p>
-<p>eg. <code>$ npm install package_name</code></p>
-<h3><a id="yarn_43"></a>yarn</h3>
-<p>Execute the <a href="https://yarnpkg.com">yarn</a> command inside a node container.<br>
-    The working directory will be the current directory you are executing this command from.<br>
-    Your $HOME/.ssh and $HOME/.npm folders wil be mounted inside this container to enable you to make use of your ssh
-    keys and npm cache.</p>
-<p>eg. <code>$ yarn add package_name</code></p>
-<h3><a id="php_50"></a>php</h3>
-<p>Execute the php command inside the running php container, or inside a php-pimcore container if none is running.<br>
-    The working directory will be the current directory you are executing this command from.</p>
-<p>eg. <code>$ php -v</code></p>
-<h3><a id="rediscli_56"></a>redis-cli</h3>
-<p>Execute the <a href="https://redis.io/topics/rediscli">redis-cli</a> command in the running redis container.</p>
-<p>eg. <code>$ redis-cli flushall</code></p>
-<h3><a id="run_61"></a>run</h3>
-<p>Run docker-compose for the current project, setting the project name to the BASEHOST variable from the .env file</p>
-<p>eg. <code>$ run up</code></p>
+                eg.
+                <pre>$ composer require package_name</pre>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingThree">
+            <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
+                   aria-expanded="false" aria-controls="collapseThree">
+                    create_db
+                </a>
+            </h4>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div class="panel-body">
+                <p>Create a new database inside the running mysql container with the given name (eg. 'symfony') and
+                    'DEFAULT CHARSET utf8'.
+                </p>
+
+                eg.
+                <pre>$ create_db symfony</pre>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading4">
+            <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse4"
+                   aria-expanded="false" aria-controls="collapse4">
+                    mysql
+                </a>
+            </h4>
+        </div>
+        <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
+            <div class="panel-body">
+                <p>Execute a mysql command inside the running mysql container as the root user.</p>
+
+                eg.
+                <pre>$ mysql "SELECT * FROM table_name;"</pre>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading5">
+            <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse5"
+                   aria-expanded="false" aria-controls="collapse5">
+                    mysqldump
+                </a>
+            </h4>
+        </div>
+        <div id="collapse5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+            <div class="panel-body">
+                <p>Execute the mysqldump command inside the running mysql container as the root user.</p>
+
+                eg.
+                <pre>$ mysqldump db_name > export_file_name.sql</pre>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading6">
+            <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse6"
+                   aria-expanded="false" aria-controls="collapse6">
+                    mysqlimport
+                </a>
+            </h4>
+        </div>
+        <div id="collapse6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading6">
+            <div class="panel-body">
+                <p>Import a given mysql file into a given database, inside the running mysql container as the root
+                    user.</p>
+
+                eg.
+                <pre>$ mysqlimport db_name import_file_name.sql</pre>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading7">
+            <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse7"
+                   aria-expanded="false" aria-controls="collapse7">
+                    node
+                </a>
+            </h4>
+        </div>
+        <div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
+            <div class="panel-body">
+                <p>Execute the <a href="https://nodejs.org">nodejs</a> command inside a <a
+                        href="https://github.com/dockerwest/nodejs">nodejs container</a>.
+                    The working directory will be the current directory you are executing this command from.</p>
+
+                eg.
+                <pre>$ node js_file.js</pre>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading8">
+            <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse8"
+                   aria-expanded="false" aria-controls="collapse8">
+                    npm
+                </a>
+            </h4>
+        </div>
+        <div id="collapse8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading8">
+            <div class="panel-body">
+                <p>Execute the <a href="https://www.npmjs.com/">npm</a> command inside a <a
+                        href="https://github.com/dockerwest/nodejs">nodejs container</a>.</p>
+                <p>
+                    The working directory will be the current directory you are executing this command from.
+                    Your $HOME/.ssh and $HOME/.npm folders wil be mounted inside this container to enable you to make
+                    use of your ssh keys and npm cache.</p>
+
+                eg.
+                <pre>$ npm install package_name</pre>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading9">
+            <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse9"
+                   aria-expanded="false" aria-controls="collapse9">
+                    yarn
+                </a>
+            </h4>
+        </div>
+        <div id="collapse9" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading9">
+            <div class="panel-body">
+                <p>Execute the <a href="https://yarnpkg.com">yarn</a> command inside a <a
+                        href="https://github.com/dockerwest/nodejs">nodejs container</a>.
+                </p>
+                <p>
+                    The working directory will be the current directory you are executing this command from.
+                    Your $HOME/.ssh and $HOME/.npm folders wil be mounted inside this container to enable you to make
+                    use of
+                    your ssh keys and npm cache.</p>
+
+                eg.
+                <pre>$ yarn add package_name</pre>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading11">
+            <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse11"
+                   aria-expanded="false" aria-controls="collapse11">
+                    redis-cli
+                </a>
+            </h4>
+        </div>
+        <div id="collapse11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading11">
+            <div class="panel-body">
+                <p>Execute the <a href="https://redis.io/topics/rediscli">redis-cli</a> command in the running redis
+                    container.</p>
+
+                eg.
+                <pre>$ redis-cli flushall</pre>
+
+            </div>
+        </div>
+    </div>
+</div>

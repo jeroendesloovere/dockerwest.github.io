@@ -66,11 +66,11 @@
                                     <li><a href="/compose-environments">Overview</a></li>
                                     <li class="dropdown-header">Products</li>
                                     <li><a href="/compose-pimcore">Pimcore</a></li>
-                                    <li><a href="/compose-environments">Magento</a></li>
+                                    <li><a href="/compose-magento2">Magento</a></li>
                                     <li role="separator" class="divider"></li>
                                     <li class="dropdown-header">Frameworks</li>
-                                    <li><a href="/compose-environments">Symfony</a></li>
-                                    <li><a href="/compose-environments">Laravel</a></li>
+                                    <li><a href="/compose-symfony">Symfony</a></li>
+                                    <li><a href="/compose-laravel">Laravel</a></li>
                                 </ul>
                             </li>
                             <li><a href="/about">About us</a></li>
@@ -81,23 +81,188 @@
         </header>
         <div class="mainContent container">
             <div class="row-fluid">
-                    <h2>Compose environment</h2>
+                    <h2>Compose environments</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <blockquote>
+            A "compose environment" is an all-in-one (development) environment to get you started quickly and without
+            worries.
+            <br><br>
+            It uses a window manager (like tmux, screen or byobu) to create a seperate "environment", for each project.
+            It also adds some helper script to your $PATH, so they can be accessed anywhere in your environment.
+        </blockquote>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h4>We currently have the following working compose environments:</h4>
+        <p>&nbsp;</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3 text-center">
+        <a href=" /compose-symfony">Symfony 2 & 3</a>
+        <a href=" /compose-symfony"><img src="/images/symfony.png" width="150px"></a>
+    </div>
+    <div class="col-md-3 text-center">
+        <a href=" /compose-laravel">Laravel 5</a>
+        <a href=" /compose-laravel"><img src="/images/laravel.png" width="150px"></a>
+    </div>
+    <div class="col-md-3 text-center">
+        <a href=" /compose-magento2">Magento 2</a>
+        <a href=" /compose-magento2"><img src="/images/magento2.png" width="150px"></a>
+    </div>
+    <div class="col-md-3 text-center">
+        <a href=" /compose-pimcore">Pimcore 4 &amp; 5</a>
+        <a href=" /compose-pimcore"><img src="/images/pimcore.png" width="150px"></a>
+    </div>
+</div>
+
+<hr>
 
 
-<p>We currently have the following working compose environments:</p>
-<ul>
-    <li><a href="https://github.com/dockerwest/compose-magento2">Magento 2</a></li>
-    <li><a href="https://github.com/dockerwest/compose-pimcore">Pimcore 4 &amp; 5</a></li>
-    <li><a href="https://github.com/dockerwest/compose-laravel">Laravel</a></li>
-    <li><a href="https://github.com/dockerwest/compose-symfony">Symfony</a></li>
-</ul>
-<p>The goal of these compose environments, is to provide an easy, one-stop solution to get you started with these
-    frameworks.
-    They include a fully configured docker-compose.yml file and some <a href="/helper-commands">helper commands</a> to
-    let you execute common commands inside docker containers (composer, nodejs, mysql,...)</p>
-<p><strong>Docker developer dns</strong></p>
-<p>Use <a href="https://github.com/BlackIkeEagle/docker-developer-dns">Docker developer dns</a> to easily access your
-    environments without manually editing your hosts file.</p>                </div>
+<div class="row">
+    <div class="col-md-12">
+        <h3>Getting started</h3>
+        <p>You'll need the <strong>latest</strong> versions of <a href="https://docs.docker.com/engine/installation/"
+                                                                  target="_blank"> docker </a>
+            and <a href="https://docs.docker.com/compose/install/" target="_blank">docker-compose</a>.
+        </p>
+
+        <p>When using Ubuntu (17.04 and up) you can use <a
+                href="https://gist.github.com/Pegasuz/9a052469c7d4bed28cace976164cf6b8" target="_blank">this Github gist.</a></p>
+
+        <p>
+            To be able to connect to the docker containers, you need a way to resolve dns to the nginx container.
+            This can be done in a number of ways, but we prefer the use of the docker-developer-dns, provided by
+            <a href="https://github.com/BlackIkeEagle" target="_blank">BlackIkeEagle</a>.
+        </p>
+
+        <p><strong>Docker developer dns</strong></p>
+        <p>See the documentation on Github
+            <a href="https://github.com/BlackIkeEagle/docker-developer-dns" target="_blank">https://github.com/BlackIkeEagle/docker-developer-dns</a>
+            on how to install this.
+        </p>
+        <p>If you used the Github gist, the docker-developer-dns is already installed.</p>
+
+        <p><strong>Mac OS X</strong></p>
+        <p>
+            For this environment to work properly you should install gnu coreutils<br>
+
+            using homebrew:
+        </p>
+        <pre>$ brew install coreutils</pre>
+        <p>
+            On macOS you could just install docker from the docker site and run like this.
+            But our experience is that the native docker install is fairly slow to use. We
+            would suggest you to install <a href="https://github.com/codekitchen/dinghy">dinghy</a>.
+        </p>
+        <p>
+            <a href="https://github.com/codekitchen/dinghy#install">Install Dinghy</a> and install the
+            VM technology you want to use. If you want native xhyve support you can
+            additionally install
+            <a href="https://github.com/zchee/docker-machine-driver-xhyve">
+                xhyve driver for docker machine
+            </a>
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>Goal</h3>
+        <p><strong>Docker-compose</strong></p>
+        <p>
+            When using a framework (symfony, laravel,...) or a product (Magento, Pimcore,...) on docker in development,
+            you need a combination of different docker images working together.
+        </p>
+        <p>
+            Our compose environments are a collection of docker images, needed to run the framework/product,
+            using docker-compose.
+        </p>
+        <p><strong>Helpers</strong></p>
+        <p>
+            We also provide helper scripts, to run common tasks like php cli, composer, node, mysql,...
+        </p>
+        <p>
+            To give you access to those helper scripts in a native way, we have created the "dockerwest compose
+            environments".
+            These will start a window manager (tmux, screen, byobu,...) of your choise, with a modified $PATH variable.
+            Allowing you to use the helper scripts as native commands. (eg. "php" will point to the bin/php script in
+            your compose folder).
+        </p>
+        <p>
+            The great thing about this is, you don't need to worry about installing different pieces of software (like
+            php, composer, node,...) onto your local machine.
+            Everything you need to run the framework/product is already provided, in docker. These helper scripts just
+            make it easy to access them.
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>Tips and known issues</h3>
+       
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading1">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse1"
+                       aria-expanded="false" aria-controls="collapse1">
+                        tmux on macOS
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1">
+                <div class="panel-body">
+                    <p>
+                        Tmux starts the shells as loginshells, that means that for example bash is
+                        going to load the `profile` files. This sort of behaviour triggers the
+                        path_helper that will move our added PATH to the end. This is not the behaviour
+                        we want.
+                    </p>
+
+                    <p>
+                        To fix this you can change the if for the path helper in your `/etc/profile` to
+                        the following:
+                    </p>
+
+                    <pre>
+if [ -z $TMUX ] && [ -x /usr/libexec/path_helper ]; then
+eval `/usr/libexec/path_helper -s`
+fi
+</pre>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading2">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse2"
+                       aria-expanded="false" aria-controls="collapse2">
+                        oh-my-zsh users
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
+                <div class="panel-body">
+                    <p>
+                        <a href="http://ohmyz.sh/">Oh-my-zsh</a> users should check if there is no fixed setting
+                        for <code>$PATH</code> in their <code>~/.zshrc</code>. If that is the case you can safely comment it
+                        out. If somewhere in your shell startup <code>$PATH</code> is forced you lose the features
+                        the <code>./environment</code> script brings to you.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>                </div>
         </div>
         <footer class="container">
             &copy; 2017 DockerWest &ndash; <a href="/about">About us</a>

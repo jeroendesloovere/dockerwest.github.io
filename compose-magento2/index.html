@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Helper commands &mdash; DockerWest &mdash; Easy docker images</title>
+        <title>Compose Magento 2 &mdash; DockerWest &mdash; Easy docker images</title>
         <meta charset="utf-8">
         <meta name="theme-color" content="#ffffff">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -81,7 +81,270 @@
         </header>
         <div class="mainContent container">
             <div class="row-fluid">
-                    <h3>Available helper commands</h3>
+                    <h2>Compose Magento 2</h2>
+<p>&nbsp;</p>
+<div class="row">
+    <div class="col-md-6">
+        <img src="/images/magento2.png" width="150px">
+    </div>
+    <div class="col-md-6 text-right">
+        <dl>
+            <dt>Project website:</dt>
+            <dd><a href="https://www.magento.com" target="_blank">magento.com</a></dd>
+            <dt>Github:</dt>
+            <dd><a href="https://github.com/dockerwest/compose-magento2" target="_blank">https://github.com/dockerwest/compose-magento2</a>
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-2">
+        <img src="/images/php.png" width="50px" data-toggle="tooltip" data-placement="bottom" title="PHP">
+    </div>
+    <div class="col-md-2">
+        <img src="/images/mysql.png" width="50px" data-toggle="tooltip" data-placement="bottom"
+             title="Mysql">
+    </div>
+    <div class="col-md-2">
+        <img src="/images/nginx.png" width="50px" data-toggle="tooltip" data-placement="bottom"
+             title="Nginx">
+    </div>
+    <div class="col-md-2">
+        <img src="/images/redis.png" width="50px" data-toggle="tooltip" data-placement="bottom"
+             title="Redis">
+    </div>
+    <div class="col-md-2">
+        <img src="/images/mailcatcher.png" height="25px" data-toggle="tooltip" data-placement="bottom"
+             title="Mailcatcher">
+    </div>
+</div>
+<div class="row">&nbsp;</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>Getting started</h3>
+        <p>Make sure you first followed the <a href="/compose-environments">global getting started steps</a>.</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h4>1. Clone the git repository next to your project folder.</h4>
+        <pre>$ git clone git@github.com:dockerwest/compose-magento2.git</pre>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h4>2. Copy .env-sample to .env and update accordingly</h4>
+        <p>Set the relative path to the folder where your project is located:</p>
+        <pre>APPLICATION=../magento2</pre>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h4>3. Start the project-specific environment</h4>
+        <pre>$ ./environment</pre>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h4>4. Start the docker environment</h4>
+        <pre>$ run up</pre>
+        <p class="help-block">The helper command <code>run</code> is an alias to <code>docker-compose</code>, specific
+            for the current environment.</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h4>5. Access your project in the browser</h4>
+        <p>This can be done in one of the following ways:</p>
+        <ul>
+            <li>Use <a href="https://github.com/BlackIkeEagle/docker-developer-dns">Docker Developer DNS</a>
+                <br>This way you can access the environment by browsing <code>magento2.dev</code> in your browser.
+            </li>
+            <li>Use <a href="https://github.com/jwilder/nginx-proxy">Nginx Proxy</a>
+                <br>This way you can access the environment by browsing <code>magento2.dev</code> in your browser.
+            </li>
+            <li>Add <code>ports</code> section to the nginx config in the docker-composer.yml file:
+                <pre>
+nginx:
+    ports:
+        - "80:80"
+            </pre>
+                This way you can access the environment by browsing <code>localhost:80</code> in your browser.
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<h3>What's in the box?</h3>
+<p>
+    The following technologies are out-of-the-box available in this environment.<br>
+    Click on one of the names for more information.
+</p>
+
+<div class="panel-group" id="techs" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="techHeading1">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#techs" href="#tech1"
+                   aria-expanded="true" aria-controls="tech1">
+                    php-magento
+                </a>
+                <span class="pull-right">
+                <span class="label label-default" data-toggle="tooltip" data-placement="top" title="Available version">5.6</span>
+                <span class="label label-default" data-toggle="tooltip" data-placement="top" title="Available version">7.0</span>
+                <span class="label label-success" data-toggle="tooltip" data-placement="top"
+                      title="Default version">7.1</span>
+                <span class="label label-default" data-toggle="tooltip" data-placement="top" title="Available version">7.2</span>
+
+                </span>
+            </h4>
+        </div>
+        <div id="tech1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="techHeading1">
+            <div class="panel-body">
+                <p>
+                    <a href="https://github.com/dockerwest/compose-magento">php-magento2</a> image named <code>application</code>,
+                    which mounts the <code>APPLICATION</code> path to the image and links to mysql, redis and
+                    mailcatcher.
+                </p>
+                <p>You can access the php-cli using the <code>php</code> helper. (see below)</p>
+                <p>
+                    The following packages are installed: php-gd php-common php-intl php-mbstring php-mcrypt 
+                    php-mysql php-readline php-soap php-xsl php-bcmath
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="techHeading2">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#techs" href="#tech2"
+                   aria-expanded="true" aria-controls="tech2">
+                    nginx-magento2
+                </a>
+                <span class="pull-right">
+                <span class="label label-default" data-toggle="tooltip" data-placement="top" title="Available version">mainline</span>
+                <span class="label label-success" data-toggle="tooltip" data-placement="top" title="Default version">stable</span>
+                </span>
+            </h4>
+        </div>
+        <div id="tech2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="techHeading2">
+            <div class="panel-body">
+                <p>
+                    <a href="https://github.com/dockerwest/nginx-magento2">nginx-magento2</a> image named
+                    <code>nginx</code>,
+                    which mounts the <code>APPLICATION</code> path to the image and links to application.
+                </p>
+                <p>
+                    This nginx container is available at <code>magento2.dev</code> and <code>www.magento2.dev</code>
+                    through
+                <pre>- VIRTUAL_HOST=${BASEHOST:-magento2.dev},www.${BASEHOST:-magento2.dev}</pre>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="techHeading3">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#techs" href="#tech3"
+                   aria-expanded="true" aria-controls="tech3">
+                    redis
+                </a>
+                <span class="pull-right">
+                <span class="label label-success">alpine</span>
+                </span>
+            </h4>
+        </div>
+        <div id="tech3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="techHeading3">
+            <div class="panel-body">
+                <p>
+                    <a href="https://hub.docker.com/_/redis/">Redis</a> image named <code>redis</code>.
+                </p>
+                <p>
+                    This redis container is available at <code>redis.magento2.dev</code> through
+                <pre>- DOMAIN_NAME=redis.${BASEHOST:-magento2.dev}</pre>
+                </p>
+                <p>
+                    Connection settings:<br>
+                <pre>host: redis</pre>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="techHeading4">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#techs" href="#tech4"
+                   aria-expanded="true" aria-controls="tech4">
+                    mysql
+                </a>
+                <span class="pull-right">
+                <span class="label label-success">latest</span>
+                </span>
+            </h4>
+        </div>
+        <div id="tech4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="techHeading4">
+            <div class="panel-body">
+                <p>
+                    <a href="https://hub.docker.com/_/mysql/">Mysql</a> image named <code>mysql</code>.
+                </p>
+                <p>
+                    The mysql root password is provided through the environment variable in the <code>.env</code> file
+                    through:
+                <pre>- MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:-toor}</pre>
+                </p>
+                <p>
+                    This mysql container is available at <code>mysql.magento2.dev</code> through
+                <pre>- DOMAIN_NAME=mysql.${BASEHOST:-magento2.dev}</pre>
+                </p>
+                <p>You should first create a new database through the <code>create_db</code> helper command (see below).
+                    <br>
+                    Connection settings:
+                <pre>
+host: mysql
+port: 3306
+user: root
+password: toor  (unless changed in .env file)</pre>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="techHeading5">
+            <h5 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#techs" href="#tech5"
+                   aria-expanded="true" aria-controls="tech5">
+                    mailcatcher
+                </a>
+                <span class="pull-right">
+                <span class="label label-success">latest</span>
+                </span>
+            </h5>
+        </div>
+        <div id="tech5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="techHeading5">
+            <div class="panel-body">
+                <p>
+                    <a href="https://hub.docker.com/r/schickling/mailcatcher/">Mailcatcher</a> container named <code>mailcatcher</code>.
+                </p>
+                <p>
+                    This mailcatcher container is available at <code>mailcatcher.magento2.dev:1080</code> through
+                <pre>- DOMAIN_NAME=mailcatcher.${BASEHOST:-magento2.dev}</pre>
+                </p>
+                <p>
+                    SMTP settings for your application are:<br>
+                <pre>
+host: mailcatcher
+port: 1025</pre>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3>Available helper commands</h3>
 <p>Click on one of the commands for more info and an example.</p>
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
     <div class="panel panel-default">
@@ -114,7 +377,7 @@
         <div id="collapse10" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading10">
             <div class="panel-body">
                 <p>Execute the <a href="http://php.net/">php</a> command inside the running php container, or inside a
-                    php-symfony container if none is running.</p>
+                    php-magento2 container if none is running.</p>
                 <p>
                     The working directory will be the current directory you are executing this command from.
                 </p>
@@ -148,6 +411,65 @@
         </div>
     </div>
     <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading14">
+            <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse14"
+                   aria-expanded="false" aria-controls="collapse14">
+                    magento
+                </a>
+            </h4>
+        </div>
+        <div id="collapse14" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading14">
+            <div class="panel-body">
+                <p>Run the bin/magento command inside the php docker container.
+                    The working directory will be the current directory you are executing this command from.
+                </p>
+
+                eg.
+                <pre>$ magento setup:install</pre>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading12">
+            <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse12"
+                   aria-expanded="false" aria-controls="collapse12">
+                    magerun
+                </a>
+            </h4>
+        </div>
+        <div id="collapse12" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12">
+            <div class="panel-body">
+                <p>Run the <a href="http://magerun.net/">magerun</a> command inside the php docker container.
+                    The working directory will be the current directory you are executing this command from.
+                </p>
+
+                eg.
+                <pre>$ magerun cache:clear</pre>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading13">
+            <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse13"
+                   aria-expanded="false" aria-controls="collapse13">
+                    install-magento
+                </a>
+            </h4>
+        </div>
+        <div id="collapse13" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading13">
+            <div class="panel-body">
+                <p>Installs Magento using "setup:install" with default parameters:</p>
+                <p>
+                    db-name=magento2, language=nl_BE, currency=EUR, timezone=Europe/Brussels<br>
+                    admin-user=admin, admin-password=DockerWest123!
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="headingThree">
             <h4 class="panel-title">
                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
@@ -158,12 +480,12 @@
         </div>
         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
             <div class="panel-body">
-                <p>Create a new database inside the running mysql container with the given name (eg. 'symfony') and
+                <p>Create a new database inside the running mysql container with the given name (eg. 'magento2') and
                     'DEFAULT CHARSET utf8'.
                 </p>
 
                 eg.
-                <pre>$ create_db symfony</pre>
+                <pre>$ create_db magento2</pre>
             </div>
         </div>
     </div>

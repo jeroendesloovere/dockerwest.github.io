@@ -44,19 +44,8 @@ title: Compose Symfony
 
 <div class="row">
     <div class="col-md-12">
-        <blockquote>
-            A "compose environment" is an all-in-one (development) environment to get you started quickly and without
-            worries.
-            <br><br>
-            It uses a window manager (like tmux, screen or byobu) to create a seperate "environment", for each project.
-            It also adds some helper script to your $PATH, so they can be accessed anywhere in your environment.
-        </blockquote>
-    </div>
-</div>
-<hr>
-<div class="row">
-    <div class="col-md-12">
         <h3>Getting started</h3>
+        <p>Make sure you first followed the <a href="{{site.url}}/compose-environments">global getting started steps</a>.</p>
     </div>
 </div>
 <div class="row">
@@ -511,68 +500,3 @@ port: 1025</pre>
         </div>
     </div>
 </div>
-
-<h3>Tricks</h3>
-
-<h4>macOS installation</h4>
-
-<p>
-    For this environment to work properly you should install gnu coreutils<br>
-
-    using homebrew:
-</p>
-
-<pre>
-$ brew install coreutils
-</pre>
-
-<p>
-    On macOS you could just install docker from the docker site and run like this.
-    But our experience is that the native docker install is fairly slow to use. We
-    would suggest you to install <a href="https://github.com/codekitchen/dinghy">dinghy</a>.
-</p>
-
-<p>
-    <a href="https://github.com/codekitchen/dinghy#install">Install Dinghy</a> and install the
-    VM technology you want to use. If you want native xhyve support you can
-    additionally install
-    <a href="https://github.com/zchee/docker-machine-driver-xhyve">
-        xhyve driver for docker machine
-    </a>
-</p>
-
-<p>
-    If you have dinghy installed this environment will try to use it.<br><br>
-
-    Currently there is an annoying limitation when we are using dinghy and that is
-    that the hostnames used must end with `docker`.
-</p>
-<hr>
-<h4>tmux on macOS</h4>
-
-<p>
-    Tmux starts the shells as loginshells, that means that for example bash is
-    going to load the `profile` files. This sort of behaviour triggers the
-    path_helper that will move our added PATH to the end. This is not the behaviour
-    we want.
-</p>
-
-<p>
-    To fix this you can change the if for the path helper in your `/etc/profile` to
-    the following:
-</p>
-
-<pre>
-if [ -z $TMUX ] && [ -x /usr/libexec/path_helper ]; then
-eval `/usr/libexec/path_helper -s`
-fi
-</pre>
-<hr>
-<h4>oh-my-zsh users</h4>
-
-<p>
-    <a href="http://ohmyz.sh/">Oh-my-zsh</a> users should check if there is no fixed setting
-    for <code>$PATH</code> in their <code>~/.zshrc</code>. If that is the case you can safely comment it
-    out. If somewhere in your shell startup <code>$PATH</code> is forced you lose the features
-    the <code>./environment</code> script brings to you.
-</p>

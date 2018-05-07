@@ -82,10 +82,10 @@ title: Compose Symfony
         <p>This can be done in one of the following ways:</p>
         <ul>
             <li>Use <a href="https://github.com/BlackIkeEagle/docker-developer-dns">Docker Developer DNS</a>
-                <br>This way you can access the environment by browsing <code>application.dev</code> in your browser.
+                <br>This way you can access the environment by browsing <code>application.docker</code> in your browser.
             </li>
             <li>Use <a href="https://github.com/jwilder/nginx-proxy">Nginx Proxy</a>
-                <br>This way you can access the environment by browsing <code>application.dev</code> in your browser.
+                <br>This way you can access the environment by browsing <code>application.docker</code> in your browser.
             </li>
             <li>Add <code>ports</code> section to the nginx config in the docker-composer.yml file:
                 <pre>
@@ -134,8 +134,8 @@ nginx:
                 </p>
                 <p>You can access the php-cli using the <code>php</code> helper. (see below)</p>
                 <p>
-                    The following packages are installed: php-gd php-mysql php-mcrypt php-sqlite3 
-                    php-bz2 php-xml php-mbstring php-zip php-redis 
+                    The following packages are installed: php-gd php-mysql php-mcrypt php-sqlite3
+                    php-bz2 php-xml php-mbstring php-zip php-redis
                     php-imagick php-json php-bcmath php-intl
                 </p>
             </div>
@@ -165,9 +165,9 @@ nginx:
                 </p>
                 <p>Please note that there is a different vhost between symfony 2 and symfony 3.</p>
                 <p>
-                    This nginx container is available at <code>application.dev</code> and <code>www.application.dev</code>
+                    This nginx container is available at <code>application.docker</code> and <code>www.application.docker</code>
                     through
-                <pre>- VIRTUAL_HOST=${BASEHOST:-application.dev},www.${BASEHOST:-application.dev}</pre>
+                <pre>- VIRTUAL_HOST=${BASEHOST:-application.docker},www.${BASEHOST:-application.docker}</pre>
                 </p>
             </div>
         </div>
@@ -190,8 +190,8 @@ nginx:
                     <a href="https://hub.docker.com/_/redis/">Redis</a> image named <code>redis</code>.
                 </p>
                 <p>
-                    This redis container is available at <code>redis.application.dev</code> through
-                <pre>- DOMAIN_NAME=redis.${BASEHOST:-application.dev}</pre>
+                    This redis container is available at <code>redis.application.docker</code> through
+                <pre>- DOMAIN_NAME=redis.${BASEHOST:-application.docker}</pre>
                 </p>
                 <p>
                     Connection settings:<br>
@@ -223,8 +223,8 @@ nginx:
                 <pre>- MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:-toor}</pre>
                 </p>
                 <p>
-                    This mysql container is available at <code>mysql.application.dev</code> through
-                <pre>- DOMAIN_NAME=mysql.${BASEHOST:-application.dev}</pre>
+                    This mysql container is available at <code>mysql.application.docker</code> through
+                <pre>- DOMAIN_NAME=mysql.${BASEHOST:-application.docker}</pre>
                 </p>
                 <p>You should first create a new database through the <code>create_db</code> helper command (see below).
                     <br>
@@ -256,8 +256,8 @@ password: toor  (unless changed in .env file)</pre>
                     <a href="https://hub.docker.com/r/schickling/mailcatcher/">Mailcatcher</a> container named <code>mailcatcher</code>.
                 </p>
                 <p>
-                    This mailcatcher container is available at <code>mailcatcher.application.dev:1080</code> through
-                <pre>- DOMAIN_NAME=mailcatcher.${BASEHOST:-application.dev}</pre>
+                    This mailcatcher container is available at <code>mailcatcher.application.docker:1080</code> through
+                <pre>- DOMAIN_NAME=mailcatcher.${BASEHOST:-application.docker}</pre>
                 </p>
                 <p>
                     SMTP settings for your application are:<br>

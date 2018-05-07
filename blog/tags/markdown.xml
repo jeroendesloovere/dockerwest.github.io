@@ -3,13 +3,13 @@
     <title><![CDATA[DockerWest]]></title>
     <link href="/blog/tags/markdown.xml" rel="self"/>
     <link href="/"/>
-    <updated>2017-10-24T15:12:14+02:00</updated>
+    <updated>2018-05-07T19:06:39+00:00</updated>
     <id>/</id>
         <generator uri="http://sculpin.io/">Sculpin</generator>
             <entry>
             <title type="html"><![CDATA[Happy Birthday Sculpin!]]></title>
             <link href="/blog/2011/12/20/happy-birthday-sculpin/"/>
-            <updated>2011-12-20T00:00:00+01:00</updated>
+            <updated>2011-12-20T00:00:00+00:00</updated>
             <id>/blog/2011/12/20/happy-birthday-sculpin/</id>
             <content type="html"><![CDATA[<p>The first commit to the Sculpin repository was made on December 20th, 2011.
 What a trip since then!</p>

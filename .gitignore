@@ -8,3 +8,6 @@
 s3.conf
 vendor
 .idea
+
+# Ignore jeckyll auto-generated local folders by `bundle exec jekyll serve`
+/_site/*

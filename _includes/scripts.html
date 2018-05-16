@@ -1,0 +1,10 @@
+<script src="{{ site.cdn.jquery }}" integrity="{{ site.cdn.jquery_hash }}" crossorigin="anonymous"></script>
+<script src="{{ site.cdn.popper }}"{% if site.github %} integrity="{{ site.cdn.popper_hash }}" crossorigin="anonymous"{% endif %}></script>
+<script src="{{ site.cdn.bootstrap }}" integrity="{{ site.cdn.bootstrap_hash }}" crossorigin="anonymous"></script>
+<script src="{{ site.baseurl }}/dist/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>

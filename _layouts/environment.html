@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  {% include header.html %}
+</head>
+<body>
+{% include navbar.html %}
+
+<main id="content" class="container" role="main">
+  <div class="row-fluid">
+    {{ content }}
+  </div>
+</main>
+
+{% include footer.html %}
+{% include scripts.html %}
+</body>
+</html>

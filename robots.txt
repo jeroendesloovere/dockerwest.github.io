@@ -1,5 +1,3 @@
 User-agent: *
-Disallow: /blog/tags/
-Disallow: /blog/categories/
 
 Sitemap: /sitemap.xml

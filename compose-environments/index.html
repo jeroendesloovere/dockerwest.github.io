@@ -135,26 +135,23 @@ title: Compose environments
         </a>
       </div>
       <div id="collapse1" class="card-body collapse" role="tabpanel" aria-labelledby="heading1">
-        <div class="panel-body">
-          <p>
-            Tmux starts the shells as loginshells, that means that for example bash is
-            going to load the `profile` files. This sort of behaviour triggers the
-            path_helper that will move our added PATH to the end. This is not the behaviour
-            we want.
-          </p>
+        <p>
+          Tmux starts the shells as loginshells, that means that for example bash is
+          going to load the `profile` files. This sort of behaviour triggers the
+          path_helper that will move our added PATH to the end. This is not the behaviour
+          we want.
+        </p>
 
-          <p>
-            To fix this you can change the if for the path helper in your `/etc/profile` to
-            the following:
-          </p>
+        <p>
+          To fix this you can change the if for the path helper in your `/etc/profile` to
+          the following:
+        </p>
 
-          <pre>
+        <pre>
 if [ -z $TMUX ] && [ -x /usr/libexec/path_helper ]; then
 eval `/usr/libexec/path_helper -s`
 fi
 </pre>
-
-        </div>
       </div>
     </div>
 
@@ -166,14 +163,12 @@ fi
         </a>
       </div>
       <div id="collapse2" class="card-body collapse" role="tabpanel" aria-labelledby="heading2">
-        <div class="panel-body">
-          <p>
-            <a href="http://ohmyz.sh/">Oh-my-zsh</a> users should check if there is no fixed setting
-            for <code>$PATH</code> in their <code>~/.zshrc</code>. If that is the case you can safely comment it
-            out. If somewhere in your shell startup <code>$PATH</code> is forced you lose the features
-            the <code>./environment</code> script brings to you.
-          </p>
-        </div>
+        <p>
+          <a href="http://ohmyz.sh/">Oh-my-zsh</a> users should check if there is no fixed setting
+          for <code>$PATH</code> in their <code>~/.zshrc</code>. If that is the case you can safely comment it
+          out. If somewhere in your shell startup <code>$PATH</code> is forced you lose the features
+          the <code>./environment</code> script brings to you.
+        </p>
       </div>
     </div>
 

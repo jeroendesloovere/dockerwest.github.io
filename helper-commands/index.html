@@ -14,12 +14,10 @@ title: Available helper commands
       </a>
     </div>
     <div id="collapseOne" class="card-body collapse" role="tabpanel" aria-labelledby="headingOne">
-      <div class="panel-body">
-        Run docker-compose for the current project, setting the project name to the BASEHOST variable from the
-        .env file
-        <br><br>
-        <pre>$ run up</pre>
-      </div>
+      Run docker-compose for the current project, setting the project name to the BASEHOST variable from the
+      .env file
+      <br><br>
+      <pre>$ run up</pre>
     </div>
   </div>
   <div class="card mb-1">
@@ -30,15 +28,13 @@ title: Available helper commands
       </a>
     </div>
     <div id="collapse10" class="card-body collapse" role="tabpanel" aria-labelledby="heading10">
-      <div class="panel-body">
-        <p>Execute the <a href="http://php.net/">php</a> command inside the running php container, or inside a
-          php-symfony container if none is running.</p>
-        <p>
-          The working directory will be the current directory you are executing this command from.
-        </p>
-        eg.
-        <pre>$ php -v</pre>
-      </div>
+      <p>Execute the <a href="http://php.net/">php</a> command inside the running php container, or inside a
+        php-symfony container if none is running.</p>
+      <p>
+        The working directory will be the current directory you are executing this command from.
+      </p>
+      eg.
+      <pre>$ php -v</pre>
     </div>
   </div>
   <div class="card mb-1">
@@ -49,18 +45,16 @@ title: Available helper commands
       </a>
     </div>
     <div id="collapseTwo" class="card-body collapse" role="tabpanel" aria-labelledby="headingTwo">
-      <div class="panel-body">
-        <p>Run the <a href="https://getcomposer.org/">composer</a> command inside the php docker container.
-          The working directory will be the current directory you are executing this command from.
-        </p>
-        <p>
-          Your $HOME/.ssh and $HOME/.composer folders wil be mounted inside this container to enable you to
-          make use of your ssh keys and composer cache.
-        </p>
+      <p>Run the <a href="https://getcomposer.org/">composer</a> command inside the php docker container.
+        The working directory will be the current directory you are executing this command from.
+      </p>
+      <p>
+        Your $HOME/.ssh and $HOME/.composer folders wil be mounted inside this container to enable you to
+        make use of your ssh keys and composer cache.
+      </p>
 
-        eg.
-        <pre>$ composer require package_name</pre>
-      </div>
+      eg.
+      <pre>$ composer require package_name</pre>
     </div>
   </div>
   <div class="card mb-1">
@@ -71,14 +65,12 @@ title: Available helper commands
       </a>
     </div>
     <div id="collapseThree" class="card-body collapse" role="tabpanel" aria-labelledby="headingThree">
-      <div class="panel-body">
-        <p>Create a new database inside the running mysql container with the given name (eg. 'symfony') and
-          'DEFAULT CHARSET utf8'.
-        </p>
+      <p>Create a new database inside the running mysql container with the given name (eg. 'symfony') and
+        'DEFAULT CHARSET utf8'.
+      </p>
 
-        eg.
-        <pre>$ create_db symfony</pre>
-      </div>
+      eg.
+      <pre>$ create_db symfony</pre>
     </div>
   </div>
   <div class="card mb-1">
@@ -89,12 +81,10 @@ title: Available helper commands
       </a>
     </div>
     <div id="collapse4" class="card-body collapse" role="tabpanel" aria-labelledby="heading4">
-      <div class="panel-body">
-        <p>Execute a mysql command inside the running mysql container as the root user.</p>
+      <p>Execute a mysql command inside the running mysql container as the root user.</p>
 
-        eg.
-        <pre>$ mysql "SELECT * FROM table_name;"</pre>
-      </div>
+      eg.
+      <pre>$ mysql "SELECT * FROM table_name;"</pre>
     </div>
   </div>
   <div class="card mb-1">
@@ -105,12 +95,10 @@ title: Available helper commands
       </a>
     </div>
     <div id="collapse5" class="card-body collapse" role="tabpanel" aria-labelledby="heading5">
-      <div class="panel-body">
-        <p>Execute the mysqldump command inside the running mysql container as the root user.</p>
+      <p>Execute the mysqldump command inside the running mysql container as the root user.</p>
 
-        eg.
-        <pre>$ mysqldump db_name > export_file_name.sql</pre>
-      </div>
+      eg.
+      <pre>$ mysqldump db_name > export_file_name.sql</pre>
     </div>
   </div>
   <div class="card mb-1">
@@ -121,13 +109,11 @@ title: Available helper commands
       </a>
     </div>
     <div id="collapse6" class="card-body collapse" role="tabpanel" aria-labelledby="heading6">
-      <div class="panel-body">
-        <p>Import a given mysql file into a given database, inside the running mysql container as the root
-          user.</p>
+      <p>Import a given mysql file into a given database, inside the running mysql container as the root
+        user.</p>
 
-        eg.
-        <pre>$ mysqlimport db_name import_file_name.sql</pre>
-      </div>
+      eg.
+      <pre>$ mysqlimport db_name import_file_name.sql</pre>
     </div>
   </div>
   <div class="card mb-1">
@@ -138,14 +124,12 @@ title: Available helper commands
       </a>
     </div>
     <div id="collapse7" class="card-body collapse" role="tabpanel" aria-labelledby="heading7">
-      <div class="panel-body">
-        <p>Execute the <a href="https://nodejs.org">nodejs</a> command inside a <a
-            href="https://github.com/dockerwest/nodejs">nodejs container</a>.
-          The working directory will be the current directory you are executing this command from.</p>
+      <p>Execute the <a href="https://nodejs.org">nodejs</a> command inside a <a
+          href="https://github.com/dockerwest/nodejs">nodejs container</a>.
+        The working directory will be the current directory you are executing this command from.</p>
 
-        eg.
-        <pre>$ node js_file.js</pre>
-      </div>
+      eg.
+      <pre>$ node js_file.js</pre>
     </div>
   </div>
   <div class="card mb-1">
@@ -156,17 +140,15 @@ title: Available helper commands
       </a>
     </div>
     <div id="collapse8" class="card-body collapse" role="tabpanel" aria-labelledby="heading8">
-      <div class="panel-body">
-        <p>Execute the <a href="https://www.npmjs.com/">npm</a> command inside a <a
-            href="https://github.com/dockerwest/nodejs">nodejs container</a>.</p>
-        <p>
-          The working directory will be the current directory you are executing this command from.
-          Your $HOME/.ssh and $HOME/.npm folders wil be mounted inside this container to enable you to make
-          use of your ssh keys and npm cache.</p>
+      <p>Execute the <a href="https://www.npmjs.com/">npm</a> command inside a <a
+          href="https://github.com/dockerwest/nodejs">nodejs container</a>.</p>
+      <p>
+        The working directory will be the current directory you are executing this command from.
+        Your $HOME/.ssh and $HOME/.npm folders wil be mounted inside this container to enable you to make
+        use of your ssh keys and npm cache.</p>
 
-        eg.
-        <pre>$ npm install package_name</pre>
-      </div>
+      eg.
+      <pre>$ npm install package_name</pre>
     </div>
   </div>
   <div class="card mb-1">
@@ -177,19 +159,17 @@ title: Available helper commands
       </a>
     </div>
     <div id="collapse9" class="card-body collapse" role="tabpanel" aria-labelledby="heading9">
-      <div class="panel-body">
-        <p>Execute the <a href="https://yarnpkg.com">yarn</a> command inside a <a
-            href="https://github.com/dockerwest/nodejs">nodejs container</a>.
-        </p>
-        <p>
-          The working directory will be the current directory you are executing this command from.
-          Your $HOME/.ssh and $HOME/.npm folders wil be mounted inside this container to enable you to make
-          use of
-          your ssh keys and npm cache.</p>
+      <p>Execute the <a href="https://yarnpkg.com">yarn</a> command inside a <a
+          href="https://github.com/dockerwest/nodejs">nodejs container</a>.
+      </p>
+      <p>
+        The working directory will be the current directory you are executing this command from.
+        Your $HOME/.ssh and $HOME/.npm folders wil be mounted inside this container to enable you to make
+        use of
+        your ssh keys and npm cache.</p>
 
-        eg.
-        <pre>$ yarn add package_name</pre>
-      </div>
+      eg.
+      <pre>$ yarn add package_name</pre>
     </div>
   </div>
   <div class="card mb-1">
@@ -200,14 +180,11 @@ title: Available helper commands
       </a>
     </div>
     <div id="collapse11" class="card-body collapse" role="tabpanel" aria-labelledby="heading11">
-      <div class="panel-body">
-        <p>Execute the <a href="https://redis.io/topics/rediscli">redis-cli</a> command in the running redis
-          container.</p>
+      <p>Execute the <a href="https://redis.io/topics/rediscli">redis-cli</a> command in the running redis
+        container.</p>
 
-        eg.
-        <pre>$ redis-cli flushall</pre>
-
-      </div>
+      eg.
+      <pre>$ redis-cli flushall</pre>
     </div>
   </div>
 </div>

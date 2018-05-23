@@ -5,3 +5,5 @@ source 'https://rubygems.org'
 gem "github-pages", group: :jekyll_plugins
 
 gem 'ruby_dep', '~> 1.3.1'
+gem 'jekyll-sitemap'
+gem 'jekyll-feed'

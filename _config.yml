@@ -1,10 +1,21 @@
 # Dependencies
 theme: jekyll-theme-cayman
 
+# Providing atom.xml
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Used by "jekyll-sitemap" and "jekyll-feed"
+url: site.baseurl # the base hostname & protocol for your site
+
+feed:
+  path: atom.xml
+
 # Social
 title: DockerWest &mdash; Easy docker images
 description: "Easy docker images"
-authors: "Ike Devolder <BlackIkeEagle>, Pieter Meyvaert <Pegasuz> and other contributors"
+author: "Ike Devolder <BlackIkeEagle>, Pieter Meyvaert <Pegasuz> and other contributors"
 
 # Marketing
 google_analytics: UA-100428460-1
